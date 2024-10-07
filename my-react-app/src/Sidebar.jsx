@@ -13,12 +13,12 @@ const Sidebar = () => {
   return (
     <div
       className={`w-[100vw] h-[100vh] flex justify-center items-center ${
-        isDarkMode ? 'bg-slate-800' : 'bg-slate-200'
+        isDarkMode ? 'bg-slate-800' : 'bg-slate-400'
       }`}
     >
       <div
         className={`w-12 ${
-          isDarkMode ? 'bg-slate-950 border' : 'bg-slate-300 border border-slate-800'
+          isDarkMode ? 'bg-slate-950 border' : 'bg-zinc-200 border border-stone-700'
         } rounded-full pt-2 pb-2 absolute flex flex-col gap-3 items-center p-2`}
       >
         {/* Dark Mode Icon */}
@@ -27,7 +27,7 @@ const Sidebar = () => {
           onMouseLeave={hideTooltip}
           onClick={handleDarkMode}
           className={`relative group w-8 h-8 p-1 ${
-            isDarkMode ? 'bg-white text-slate-800' : 'text-white'
+            isDarkMode ? 'bg-white text-slate-800' : 'text-black'
           }  rounded-full transition-colors duration-300 ease-in-out hover:bg-white hover:text-slate-800`}
         >
           <svg
@@ -79,11 +79,15 @@ const Sidebar = () => {
           )}
         </div>
 
+        <div className={`h-0.5 w-full rounded-full ${isDarkMode ? 'bg-white':'bg-black'}`}></div>
+
         {/* Home Icon */}
         <div
           onMouseEnter={() => showTooltip('Home')}
           onMouseLeave={hideTooltip}
-          className="relative group w-8 h-8 p-1 text-white rounded-full hover:bg-white hover:text-slate-800 transition duration-300 ease-in-out"
+          className={`relative group w-8 h-8 p-1 ${
+            isDarkMode?'text-white':'text-black'
+          }  rounded-full hover:text-black hover:bg-white transition duration-300 ease-in-out `}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -109,7 +113,9 @@ const Sidebar = () => {
         <div
           onMouseEnter={() => showTooltip('Document')}
           onMouseLeave={hideTooltip}
-          className="relative group w-8 h-8 p-1 text-white rounded-full hover:bg-white hover:text-slate-800 transition duration-300 ease-in-out"
+          className={`relative group w-8 h-8 p-1 ${
+            isDarkMode?'text-white':'text-black'
+          }  rounded-full hover:text-black hover:bg-white transition duration-300 ease-in-out `}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -135,7 +141,9 @@ const Sidebar = () => {
         <div
           onMouseEnter={() => showTooltip('Email')}
           onMouseLeave={hideTooltip}
-          className="relative group w-8 h-8 p-1 text-white rounded-full hover:bg-white hover:text-slate-800 transition duration-300 ease-in-out"
+          className={`relative group w-8 h-8 p-1 ${
+            isDarkMode?'text-white':'text-black'
+          }  rounded-full hover:text-black hover:bg-white transition duration-300 ease-in-out `}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -161,7 +169,9 @@ const Sidebar = () => {
         <div
           onMouseEnter={() => showTooltip('Settings')}
           onMouseLeave={hideTooltip}
-          className="relative group w-8 h-8 p-1 text-white rounded-full hover:bg-white hover:text-slate-800 transition duration-300 ease-in-out"
+          className={`relative group w-8 h-8 p-1 ${
+            isDarkMode?'text-white':'text-black'
+          }  rounded-full hover:text-black hover:bg-white transition duration-300 ease-in-out `}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
